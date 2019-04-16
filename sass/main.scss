@@ -1,6 +1,11 @@
 @import 'component.scss';
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: mediumpurple;
+  box-sizing: border-box;
   display: flex;
 }

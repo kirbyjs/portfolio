@@ -24,3 +24,19 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run test
+
+  deploy-docker-image:
+    docker:
+      - image: ubuntu:14.04
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy-docker-image:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

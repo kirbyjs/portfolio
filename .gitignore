@@ -1,5 +1,7 @@
 .idea
-dist
-node_modules
-webpack/manifest
-webpack/vendor-scripts
+/assets/bundle
+/assets/json
+/.cert
+/lib
+/node_modules
+/webpack/manifest

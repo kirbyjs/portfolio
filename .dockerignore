@@ -1,0 +1,10 @@
+.DS_STORE
+.gitignore
+LICENSE
+README.md
+/.cert
+/.circleci
+/assets
+/lib
+/node_modules
+/terraform
