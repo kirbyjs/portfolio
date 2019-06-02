@@ -2,8 +2,8 @@
 
 set -e
 
-productionImageName=$1
+dockerHubImageName=$1
 
-docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+echo ${DOCKERHUB_PASS} | docker login -u ${DOCKERHUB_USERNAME} --password-stdin
 
-docker push kirbyjs/${productionImageName}
+docker push ${dockerHubImageName}
