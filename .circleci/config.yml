@@ -1,8 +1,8 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/node:10.5
+    verify:
+      - image: circleci/node:10
 
     working_directory: ~/repo
 
@@ -16,7 +16,8 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: npm ci
+      - run:
+          command: bash ./scripts/verify.sh
 
       - save_cache:
           paths:

@@ -4,7 +4,8 @@ LICENSE
 README.md
 /.cert
 /.circleci
-/assets
+/assets/bundle
+/assets/json
 /lib
 /node_modules
 /terraform
