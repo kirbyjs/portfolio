@@ -11,7 +11,7 @@ docker container run portfolio-build npm run test
 testExitCode=$?
 
 if [[ ${testExitCode} == 0 ]]; then
-    ./scripts/build-docker-images.sh ${productionImageName}
+    ./scripts/deploy-docker-image.sh ${productionImageName}
 fi
 
 # Cleanup
