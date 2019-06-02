@@ -8,6 +8,7 @@ jobs:
 
     steps:
       - checkout
+      - setup_remote_docker
 
       # Download and cache dependencies
       - restore_cache:
@@ -16,19 +17,20 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run:
-          command: bash ./scripts/verify.sh
+      - run: bash ./scripts/verify.sh
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: npm run test
-
   deploy-docker-image:
     docker:
       - image: ubuntu:14.04
+    working_directory: ~/repo
+
+    steps:
+      - run: echo 'not setup yet'
 
 workflows:
   version: 2
