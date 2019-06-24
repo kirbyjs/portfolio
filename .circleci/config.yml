@@ -35,7 +35,9 @@ jobs:
             - "63:40:cf:2b:98:fb:f5:a1:5a:65:de:29:12:fa:c2:b2"
       - run:
           command: |
-            ssh ${WEB_SERVER}
+            ssh -o "ConnectTimeout 3" \
+                -o "StrictHostKeyChecking no" \
+                ${WEB_SERVER}
             echo 'successfully logged in'
 
 
