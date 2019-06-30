@@ -17,7 +17,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: bash ./scripts/verify.sh
+      - run: echo 'test' # bash ./scripts/verify.sh
 
       - save_cache:
           paths:
@@ -40,11 +40,11 @@ jobs:
 
             scp -o "ConnectTimeout 3" \
                 -o "StrictHostKeyChecking no" \
-                ./scripts ./docker ./nginx ./digitalocean.ini ${WEB_SERVER}:~/
+                -r ./scripts ./docker ./nginx ./digitalocean.ini ${WEB_SERVER}:~/
 
             ssh ${WEB_SERVER} bash -c '
               echo "successfully logged in"
-              chmod -R +rx ~/scripts ~/docker ~/nginx ~/digitialocean.ini
+              chmod -R +rx ~/scripts ~/docker ~/nginx ~/digitalocean.ini
             '
 
 workflows:
