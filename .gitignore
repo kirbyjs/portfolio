@@ -1,7 +1,7 @@
 .idea
 /assets/bundle
 /assets/json
-/.cert
+/letsencrypt
 /lib
 /node_modules
 /webpack/manifest

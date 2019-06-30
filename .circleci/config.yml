@@ -30,16 +30,22 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - checkout
       - add_ssh_keys:
           fingerprints:
             - "63:40:cf:2b:98:fb:f5:a1:5a:65:de:29:12:fa:c2:b2"
       - run:
           command: |
-            ssh -o "ConnectTimeout 3" \
+            echo "dns_digitialocean_token = $DIGITALOCEAN_TOKEN" > digitalocean.ini
+
+            scp -o "ConnectTimeout 3" \
                 -o "StrictHostKeyChecking no" \
-                ${WEB_SERVER} bash -c '
-                  echo "successfully logged in"
-                '
+                ./scripts ./docker ./nginx ./digitalocean.ini ${WEB_SERVER}:~/
+
+            ssh ${WEB_SERVER} bash -c '
+              echo "successfully logged in"
+              chmod -R +rx ~/scripts ~/docker ~/nginx ~/digitialocean.ini
+            '
 
 workflows:
   build-deploy:
