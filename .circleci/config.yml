@@ -37,9 +37,9 @@ jobs:
           command: |
             ssh -o "ConnectTimeout 3" \
                 -o "StrictHostKeyChecking no" \
-                ${WEB_SERVER}
-            echo 'successfully logged in'
-
+                ${WEB_SERVER} bash -c '
+                  echo "successfully logged in"
+                '
 
 workflows:
   build-deploy:
