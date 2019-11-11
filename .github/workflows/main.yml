@@ -4,6 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - uses: kirbyjs/actions/ssh@master
         with:
           host: ${{ secrets.HOST }}
@@ -11,3 +12,11 @@ jobs:
           key: ${{ secrets.KEY }}
           command: |
             whoami
+            echo "I'm in :)"
+      - uses: kirbyjs/actions/scp@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          local_files: './docker-compose.yml ./webpack'
+          remote_location: '~/'
