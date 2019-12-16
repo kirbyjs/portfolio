@@ -14,7 +14,9 @@ const scssCommonLoaders = [
     },
     {
         loader: 'css-loader',
-        options: { sourceMap: !isProduction }
+        options: {
+            sourceMap: !isProduction
+        }
     },
     {
         loader: 'sass-loader',

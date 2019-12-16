@@ -1,13 +1,8 @@
 // Created by kirby15 on 2/1/18.
 import React from 'react';
-import { hot } from 'react-hot-loader/root';
 
-function App() {
+export default function App() {
     return (
-        <header>
-            <h1>Kirby Simmons</h1>
-        </header>
+        <div>Hello World!</div>
     );
 }
-
-export default hot(App);

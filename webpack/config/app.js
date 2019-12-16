@@ -1,6 +1,6 @@
 // Created by kirby15 on 2/1/18.
 
-const AssetsPlugin = require('assets-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -25,13 +25,11 @@ module.exports = {
         publicPath: '/assets/bundle'
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, '..', '..', 'src', 'index.html')
+        }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
-        }),
-        new AssetsPlugin({
-            filename: 'assets.json',
-            path: path.join(__dirname, '..', '..', 'assets', 'json'),
-            includeAllFileTypes: false
         })
     ]
 };

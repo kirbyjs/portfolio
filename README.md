@@ -1,2 +1,2 @@
-# Portfolio
-My portfolio website using docker.
+# react-webpack-boilerplate
+Simple React Webpack Starter App
