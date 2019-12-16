@@ -1,0 +1,8 @@
+{
+  "Statement": [{
+    "Effect": "Allow",
+    "Action": "s3:GetObject",
+    "Principal":  { "AWS": "*" },
+    "Resource": "arn:aws:s3:::kirbyjs-portfolio/*"
+  }]
+}
