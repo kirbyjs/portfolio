@@ -47,3 +47,4 @@ jobs:
         run: |
           cp -r ./assets/public/* ./assets/bundle
           aws s3 cp ./assets/bundle s3://kirbyjs-portfolio/ --recursive
+          aws s3 cp ./assets/bundle/index.html s3://kirbyjs-portfolio/ --cache-control max-age=0
