@@ -22,7 +22,7 @@ module.exports = {
     output: {
         filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, '..', '..', 'assets', 'bundle'),
-        publicPath: '/assets/bundle'
+        publicPath: '/'
     },
     plugins: [
         new HtmlWebpackPlugin({
