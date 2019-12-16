@@ -2,10 +2,18 @@ locals {
   s3_origin_id = "kirbyjs-portfolio-bucket"
 }
 
+resource "aws_cloudfront_origin_access_identity" "default" {
+  comment = "kirbyjs.com default oai"
+}
+
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name = aws_s3_bucket.portfolio.bucket_regional_domain_name
     origin_id   = local.s3_origin_id
+
+    s3_origin_config {
+      origin_access_identity = aws_cloudfront_origin_access_identity.default.cloudfront_access_identity_path
+    }
   }
 
   aliases             = ["kirbyjs.com"]

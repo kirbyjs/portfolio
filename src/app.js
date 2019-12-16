@@ -3,6 +3,6 @@ import React from 'react';
 
 export default function App() {
     return (
-        <div>Hello World!</div>
+        <h1>Kirby J Simmons!</h1>
     );
 }
