@@ -33,3 +33,16 @@ resource "aws_s3_bucket" "portfolio" {
     Name = "kirbyjs-portfolio"
   }
 }
+
+resource "aws_s3_bucket" "www" {
+  bucket = "www.kirbyjs.com"
+  acl    = "private"
+
+  website {
+    redirect_all_requests_to = "https://kirbyjs.com"
+  }
+
+  tags = {
+    Name = "www-kirbyjs-portfolio"
+  }
+}
