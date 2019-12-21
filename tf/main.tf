@@ -12,5 +12,5 @@ provider "aws" {
 }
 
 data "aws_acm_certificate" "kirbyjs" {
-  domain = "*.kirbyjs.com"
+  domain = "kirbyjs.com"
 }
