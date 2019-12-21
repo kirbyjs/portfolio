@@ -53,7 +53,7 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
 
 resource "aws_cloudfront_distribution" "www_kirbyjs" {
   origin {
-    domain_name = aws_s3_bucket.www_kirbyjs.bucket_regional_domain_name
+    domain_name = aws_s3_bucket.www_kirbyjs.website_domain
     origin_id   = local.www_s3_origin_id
   }
 
