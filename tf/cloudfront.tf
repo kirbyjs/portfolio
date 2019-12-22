@@ -53,8 +53,15 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
 
 resource "aws_cloudfront_distribution" "www_kirbyjs" {
   origin {
-    domain_name = aws_s3_bucket.www_kirbyjs.website_domain
+    domain_name = aws_s3_bucket.www_kirbyjs.website_endpoint
     origin_id   = local.www_s3_origin_id
+
+    custom_origin_config {
+      http_port              = "80"
+      https_port             = "443"
+      origin_protocol_policy = "http-only"
+      origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
+    }
   }
 
   aliases             = ["www.kirbyjs.com"]
