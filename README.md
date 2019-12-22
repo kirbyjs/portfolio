@@ -1,2 +1,3 @@
-# react-webpack-boilerplate
-Simple React Webpack Starter App
+# kirbyjs.com
+
+Made with :heart:
