@@ -31,10 +31,13 @@ const scssCommonLoaders = [
 ];
 
 module.exports = {
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.json']
+    },
     module: {
         rules: [
             {
-                test: /\.js/,
+                test: /\.(ts|js)x?$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
             },

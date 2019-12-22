@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "kirbyjs-terraform-statefiles"
-    key    = "portfolio/prod.tf"
+    key    = "kirbyjs/prod.tf"
     region = "us-east-1"
   }
 }

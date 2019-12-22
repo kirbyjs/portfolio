@@ -6,7 +6,7 @@ import { AppContainer } from 'react-hot-loader';
 import ReactApp from './app';
 import '../sass/main.scss';
 
-const render = (App) => {
+const render = (App: React.FunctionComponent) => {
     ReactDOM.render(
         <AppContainer>
             <App />

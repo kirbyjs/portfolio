@@ -11,7 +11,7 @@ module.exports = {
     ...webpackConfig,
     mode: 'production',
     entry: {
-        app: './src/index.js'
+        app: './src/index'
     },
     optimization: {
         splitChunks: {
