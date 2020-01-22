@@ -25,22 +25,14 @@ const scssCommonLoaders = [
     {
         loader: 'postcss-loader',
         options: {
-            plugins: [autoprefixer({ browsers: 'last 2 versions' })]
+            plugins: [autoprefixer()]
         }
     }
 ];
 
 module.exports = {
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json']
-    },
     module: {
         rules: [
-            {
-                test: /\.(ts|js)x?$/,
-                exclude: /node_modules/,
-                use: 'babel-loader'
-            },
             {
                 test: /\.scss/,
                 use: scssCommonLoaders

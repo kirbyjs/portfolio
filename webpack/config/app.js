@@ -10,9 +10,6 @@ const path = require('path');
 module.exports = {
     ...webpackConfig,
     mode: 'production',
-    entry: {
-        app: './src/index'
-    },
     optimization: {
         splitChunks: {
             chunks: 'initial'

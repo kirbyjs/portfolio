@@ -1,18 +1,7 @@
 name: kirbyjs
 on: [ push ]
 jobs:
-  verify:
-    runs-on: ubuntu-latest
-    container: node:12
-    steps:
-      - uses: actions/checkout@v1
-      - name: install
-        run: npm ci
-      - name: tsc
-        run: npm run tsc
-
   create_infra:
-    needs: verify
     runs-on: ubuntu-latest
     container: hashicorp/terraform:0.12.18
     steps:

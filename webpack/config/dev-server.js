@@ -13,17 +13,6 @@ module.exports = {
         open: true,
         port: 9020
     },
-    entry: {
-        app: [
-            'react-hot-loader/patch',
-            './src/index'
-        ]
-    },
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, '..', '..', 'dist'),
-        publicPath: '/'
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '..', '..', 'src', 'index.html')
