@@ -34,6 +34,15 @@ module.exports = {
     module: {
         rules: [
             {
+              test: /\.(jpg|pdf|png|svg)$/,
+              use: [{
+                  loader: 'file-loader',
+                  options: {
+                      name: '[name].[contenthash].[ext]'
+                  }
+              }]
+            },
+            {
                 test: /\.scss/,
                 use: scssCommonLoaders
             }

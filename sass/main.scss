@@ -1,10 +1,120 @@
+@import "media-queries";
+
+$primary-font-color: #333;
+$primary-white: #f6f6f8;
+$primary-dark: #e3e3e3;
+$primary-accent: #c60021;
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+a {
+  color: $primary-accent;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 body {
-  background-color: mediumpurple;
+  background-color: $primary-white;
   box-sizing: border-box;
-  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+  color: $primary-font-color;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#kirby-img {
+  margin: 0 0 5px 20px;
+  width: 100px;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 15px 0;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin: 0 0 5px 0;
+}
+
+#resume {
+  font-size: 1em;
+}
+
+header, article, footer {
+  padding: 50px 0;
+
+  &:nth-child(even) {
+    background-color: $primary-dark;
+    clip-path: polygon(0 0%, 100% 4%, 100% 96%, 0% 100%);
+  }
+}
+
+header {
+  text-align: center;
+}
+
+article {
+  .content-wrapper {
+    margin: 0 auto;
+  }
+
+  .project-img {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .project-details {
+    margin: 0 auto;
+  }
+
+  .tech-icons {
+    margin: 10px 0 20px 0;
+    text-align: center;
+
+    img {
+      margin-right: 15px;
+      max-width: 75px;
+      vertical-align: middle;
+
+      &.img-horizontal {
+        max-width: 125px;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+
+  .made-with-love {
+    margin-bottom: 20px;
+
+    .fa-heart {
+      color: $primary-accent;
+    }
+  }
+
+  .social-media {
+    a {
+      color: $primary-font-color;
+
+      &:hover {
+        color: $primary-accent;
+      }
+    }
+    font-size:  2.5rem;
+  }
 }

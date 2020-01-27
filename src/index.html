@@ -13,8 +13,56 @@
     <meta property="og:site_name" content="Kirby Simmons">
     <meta name="viewport" content="width=device-width">
     <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Kirby J Simmons!</h1>
+    <header>
+        <img src="<%=require('./kirby.svg').default%>" id="kirby-img" alt="Kirby Simmons as a boy in a superman costume."/>
+        <h1>Kirby Simmons</h1>
+        <h3>Software Engineer</h3>
+        <a href="<%=require('./resume.pdf').default%>" id="resume">Résumé</a>
+    </header>
+    <article>
+        <div class="content-wrapper">
+            <img src="<%=require('./wm.jpg').default%>" class="project-img" alt="Work Manager Sample Image"/>
+            <div class="project-details">
+                <h2>TekSystems - John Deere Contractor</h2>
+                <section>
+                    <p>Currently at John Deere, I help develop test driven planning software for farm managers in Germany
+                        with Agile. I also manage the deployment of applications that my team owns.</p>
+                    <h3>Technology</h3>
+                    <p>Work Manager was primarily the application that I worked on. For the front-end we used react/redux,
+                        and used babel/webpack to bundle our code. For the backend we used node.js with the hapi.js
+                        framework. All our code was test driven using mocha.</p>
+                    <p>There was also a couple java spring microservices that I worked on. This is where I got to learn a
+                        lot about cloud infrastructure by learning how to deploy the microservice to AWS ECS and AWS ELB. We
+                        used Terraform to manage the deployment of the infrastructure.</p>
+                </section>
+            </div>
+            <div class="tech-icons">
+                <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="<%=require('./icons/react.svg').default%>" alt="React.js Logo"/></a>
+                <a href="https://redux.js.org/" target="_blank" rel="noreferrer"><img src="<%=require('./icons/redux.svg').default%>" alt="Redux.js Logo"/></a>
+                <a href="https://babeljs.io/" target="_blank" rel="noreferrer"><img class="img-horizontal" src="<%=require('./icons/babel.svg').default%>" alt="Babel Logo"/></a>
+                <a href="https://webpack.js.org/" target="_blank" rel="noreferrer"><img src="<%=require('./icons/webpack.svg').default%>" alt="Webpack Logo"/></a>
+                <a href="https://sass-lang.com/" target="_blank" rel="noreferrer"><img src="<%=require('./icons/sass.svg').default%>" alt="Sass Logo"/></a>
+                <a href="https://nodejs.org/" target="_blank" rel="noreferrer"><img src="<%=require('./icons/nodejs.svg').default%>" alt="Nodejs Logo"/></a>
+                <a href="https://hapi.dev/" target="_blank" rel="noreferrer"><img src="<%=require('./icons/hapijs.svg').default%>" alt="Hapijs Logo"/></a>
+                <a href="https://mochajs.org/" target="_blank" rel="noreferrer"><img src="<%=require('./icons/mocha.svg').default%>" alt="Mocha Logo"/></a>
+                <a href="https://spring.io/" target="_blank" rel="noreferrer"><img src="<%=require('./icons/spring.svg').default%>" alt="Spring Logo"/></a>
+                <a href="https://aws.amazon.com/" target="_blank" rel="noreferrer"><img src="<%=require('./icons/pb_aws.png').default%>" alt="AWS Logo"/></a>
+                <a href="https://terraform.io/" target="_blank" rel="noreferrer"><img class="img-horizontal" src="<%=require('./icons/terraform.svg').default%>" alt="Terraform Logo"/></a>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div class="made-with-love">
+            Made with <i class="fas fa-heart"></i> by Kirby
+        </div>
+        <div class="social-media">
+            <a href="https://github.com/kirbyjs"><i class="fab fa-github-alt"></i></a>
+            <a href="https://linkedin.com/in/kirbyjs"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
 </body>
 </html>
