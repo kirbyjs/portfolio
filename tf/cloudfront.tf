@@ -1,6 +1,11 @@
 locals {
-  root_s3_origin_id = "root-kirbyjs-bucket"
-  www_s3_origin_id  = "www-kirbyjs-bucket"
+  root_s3_origin_id       =  "root-kirbyjs-bucket"
+  www_s3_origin_id        = "www-kirbyjs-bucket"
+  default_allowed_methods = ["GET", "HEAD", "OPTIONS"]
+  default_cached_methods  = ["GET", "HEAD", "OPTIONS"]
+  default_ttl             = 2592000
+  max_ttl                 = 31536000
+  min_ttl                 = 86400
 }
 
 resource "aws_cloudfront_origin_access_identity" "root_kirbyjs" {
@@ -24,14 +29,122 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
   default_root_object = "index.html"
 
   default_cache_behavior {
-    allowed_methods        = ["GET", "HEAD", "OPTIONS"]
-    cached_methods         = ["GET", "HEAD"]
+    allowed_methods        = local.default_allowed_methods
+    cached_methods         = local.default_cached_methods
     target_origin_id       = local.root_s3_origin_id
     viewer_protocol_policy = "redirect-to-https"
 
     forwarded_values {
       query_string = false
 
+      cookies {
+        forward = "none"
+      }
+    }
+  }
+
+  ordered_cache_behavior {
+    path_pattern           = "*.svg"
+    allowed_methods        = local.default_allowed_methods
+    cached_methods         = local.default_cached_methods
+    target_origin_id       = local.root_s3_origin_id
+    viewer_protocol_policy = "redirect-to-https"
+    default_ttl            = local.default_ttl
+    max_ttl                = local.max_ttl
+    min_ttl                = local.min_ttl
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+  }
+
+  ordered_cache_behavior {
+    path_pattern           = "*.webp"
+    allowed_methods        = local.default_allowed_methods
+    cached_methods         = local.default_cached_methods
+    target_origin_id       = local.root_s3_origin_id
+    viewer_protocol_policy = "redirect-to-https"
+    default_ttl            = local.default_ttl
+    max_ttl                = local.max_ttl
+    min_ttl                = local.min_ttl
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+  }
+
+  ordered_cache_behavior {
+    path_pattern           = "*.jpg"
+    allowed_methods        = local.default_allowed_methods
+    cached_methods         = local.default_cached_methods
+    target_origin_id       = local.root_s3_origin_id
+    viewer_protocol_policy = "redirect-to-https"
+    default_ttl            = local.default_ttl
+    max_ttl                = local.max_ttl
+    min_ttl                = local.min_ttl
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+  }
+
+  ordered_cache_behavior {
+    path_pattern           = "*.jp2"
+    allowed_methods        = local.default_allowed_methods
+    cached_methods         = local.default_cached_methods
+    target_origin_id       = local.root_s3_origin_id
+    viewer_protocol_policy = "redirect-to-https"
+    default_ttl            = local.default_ttl
+    max_ttl                = local.max_ttl
+    min_ttl                = local.min_ttl
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+  }
+
+  ordered_cache_behavior {
+    path_pattern           = "*.png"
+    allowed_methods        = local.default_allowed_methods
+    cached_methods         = local.default_cached_methods
+    target_origin_id       = local.root_s3_origin_id
+    viewer_protocol_policy = "redirect-to-https"
+    default_ttl            = local.default_ttl
+    max_ttl                = local.max_ttl
+    min_ttl                = local.min_ttl
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+  }
+
+  ordered_cache_behavior {
+    path_pattern           = "*.pdf"
+    allowed_methods        = local.default_allowed_methods
+    cached_methods         = local.default_cached_methods
+    target_origin_id       = local.root_s3_origin_id
+    viewer_protocol_policy = "redirect-to-https"
+    default_ttl            = local.default_ttl
+    max_ttl                = local.max_ttl
+    min_ttl                = local.min_ttl
+
+    forwarded_values {
+      query_string = false
       cookies {
         forward = "none"
       }
