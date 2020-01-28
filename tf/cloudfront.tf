@@ -33,118 +33,13 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
     cached_methods         = local.default_cached_methods
     target_origin_id       = local.root_s3_origin_id
     viewer_protocol_policy = "redirect-to-https"
-
-    forwarded_values {
-      query_string = false
-
-      cookies {
-        forward = "none"
-      }
-    }
-  }
-
-  ordered_cache_behavior {
-    path_pattern           = "*.svg"
-    allowed_methods        = local.default_allowed_methods
-    cached_methods         = local.default_cached_methods
-    target_origin_id       = local.root_s3_origin_id
-    viewer_protocol_policy = "redirect-to-https"
     default_ttl            = local.default_ttl
     max_ttl                = local.max_ttl
     min_ttl                = local.min_ttl
 
     forwarded_values {
       query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
-  }
 
-  ordered_cache_behavior {
-    path_pattern           = "*.webp"
-    allowed_methods        = local.default_allowed_methods
-    cached_methods         = local.default_cached_methods
-    target_origin_id       = local.root_s3_origin_id
-    viewer_protocol_policy = "redirect-to-https"
-    default_ttl            = local.default_ttl
-    max_ttl                = local.max_ttl
-    min_ttl                = local.min_ttl
-
-    forwarded_values {
-      query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
-  }
-
-  ordered_cache_behavior {
-    path_pattern           = "*.jpg"
-    allowed_methods        = local.default_allowed_methods
-    cached_methods         = local.default_cached_methods
-    target_origin_id       = local.root_s3_origin_id
-    viewer_protocol_policy = "redirect-to-https"
-    default_ttl            = local.default_ttl
-    max_ttl                = local.max_ttl
-    min_ttl                = local.min_ttl
-
-    forwarded_values {
-      query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
-  }
-
-  ordered_cache_behavior {
-    path_pattern           = "*.jp2"
-    allowed_methods        = local.default_allowed_methods
-    cached_methods         = local.default_cached_methods
-    target_origin_id       = local.root_s3_origin_id
-    viewer_protocol_policy = "redirect-to-https"
-    default_ttl            = local.default_ttl
-    max_ttl                = local.max_ttl
-    min_ttl                = local.min_ttl
-
-    forwarded_values {
-      query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
-  }
-
-  ordered_cache_behavior {
-    path_pattern           = "*.png"
-    allowed_methods        = local.default_allowed_methods
-    cached_methods         = local.default_cached_methods
-    target_origin_id       = local.root_s3_origin_id
-    viewer_protocol_policy = "redirect-to-https"
-    default_ttl            = local.default_ttl
-    max_ttl                = local.max_ttl
-    min_ttl                = local.min_ttl
-
-    forwarded_values {
-      query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
-  }
-
-  ordered_cache_behavior {
-    path_pattern           = "*.pdf"
-    allowed_methods        = local.default_allowed_methods
-    cached_methods         = local.default_cached_methods
-    target_origin_id       = local.root_s3_origin_id
-    viewer_protocol_policy = "redirect-to-https"
-    default_ttl            = local.default_ttl
-    max_ttl                = local.max_ttl
-    min_ttl                = local.min_ttl
-
-    forwarded_values {
-      query_string = false
       cookies {
         forward = "none"
       }
