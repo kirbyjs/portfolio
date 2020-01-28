@@ -17,14 +17,20 @@
 </head>
 <body>
     <header>
-        <img src="<%=require('./kirby.webp').default%>" id="kirby-img" alt="Kirby Simmons as a boy in a superman costume."/>
+        <picture>
+            <source type="image/webp" srcset="<%=require('./kirby.webp').default%>">
+            <img src="<%=require('./kirby.png').default%>" id="kirby-img" alt="Kirby Simmons as a boy in a superman costume."/>
+        </picture>
         <h1>Kirby Simmons</h1>
         <h3>Software Engineer</h3>
         <a href="<%=require('./resume.pdf').default%>" id="resume">R&eacute;sum&eacute;</a>
     </header>
     <article>
         <div class="content-wrapper">
-            <img src="<%=require('./wm.jp2').default%>" class="project-img" alt="Work Manager Sample Image"/>
+            <picture>
+                <source type="image/jp2" srcset="<%=require('./wm.jp2').default%>">
+                <img src="<%=require('./wm.jpg').default%>" class="project-img" alt="Work Manager Sample Image"/>
+            </picture>
             <div class="project-details">
                 <h2>TekSystems - John Deere Contractor</h2>
                 <section>
