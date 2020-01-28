@@ -34,7 +34,7 @@ module.exports = {
     module: {
         rules: [
             {
-              test: /\.(jpg|pdf|png|svg)$/,
+              test: /\.(jpg|jp2|webp|pdf|png|svg)$/,
               use: [{
                   loader: 'file-loader',
                   options: {
