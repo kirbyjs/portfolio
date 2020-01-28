@@ -14,7 +14,9 @@
     "type": "git",
     "url": "https://github.com/kirbyjs/portfolio.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lazysizes": "^5.2.0"
+  },
   "devDependencies": {
     "autoprefixer": "~9.7.4",
     "cross-env": "~6.0.3",

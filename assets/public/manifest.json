@@ -1,9 +1,10 @@
 {
   "name": "Kirby Simmons",
   "short_name": "KirbyJS",
-  "display": "browser",
-  "Scope": "/",
-  "start_url": "/",
+  "display": "standalone",
+  "start_url": "/index.html",
+  "background_color": "#f6f6f8",
+  "theme_color": "#c60021",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
@@ -45,6 +46,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "splash_pages": null
+  ]
 }
