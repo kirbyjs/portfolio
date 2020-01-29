@@ -39,6 +39,5 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          cp -r ./assets/public/* ./assets/bundle
           aws s3 cp ./assets/bundle s3://kirbyjs.com/ --recursive --cache-control max-age=31536000
           aws s3 cp ./assets/bundle/index.html s3://kirbyjs.com/ --cache-control max-age=0
