@@ -2,6 +2,7 @@
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const webpackConfig = require('./common');
 
@@ -18,6 +19,9 @@ module.exports = {
         port: 9020
     },
     plugins: [
+        new CopyPlugin([{
+            from: path.resolve(source, '..', 'assets', 'public')
+        }]),
         new HtmlWebpackPlugin({
             template: path.resolve(source, 'index.html')
         }),
