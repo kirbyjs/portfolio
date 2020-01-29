@@ -31,6 +31,7 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
   default_cache_behavior {
     allowed_methods        = local.default_allowed_methods
     cached_methods         = local.default_cached_methods
+    compress               = true
     target_origin_id       = local.root_s3_origin_id
     viewer_protocol_policy = "redirect-to-https"
     default_ttl            = local.default_ttl
