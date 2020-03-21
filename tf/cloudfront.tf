@@ -1,5 +1,5 @@
 locals {
-  root_s3_origin_id       =  "root-kirbyjs-bucket"
+  root_s3_origin_id       = "root-kirbyjs-bucket"
   www_s3_origin_id        = "www-kirbyjs-bucket"
   default_allowed_methods = ["GET", "HEAD", "OPTIONS"]
   default_cached_methods  = ["GET", "HEAD", "OPTIONS"]
@@ -46,6 +46,26 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
       }
     }
   }
+
+    ordered_cache_behavior {
+      path_pattern           = "/index.html"
+      allowed_methods        = local.default_allowed_methods
+      compress               = true
+      cached_methods         = local.default_cached_methods
+      target_origin_id       = local.root_s3_origin_id
+      viewer_protocol_policy = "redirect-to-https"
+      default_ttl            = 0
+      max_ttl                = 0
+      min_ttl                = 0
+
+      forwarded_values {
+        query_string = false
+
+        cookies {
+          forward = "none"
+        }
+      }
+    }
 
   restrictions {
     geo_restriction {
