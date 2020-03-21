@@ -1,12 +1,15 @@
 
 import boto3
+import datetime
 
 s3 = boto3.resource('s3')
 my_bucket = s3.Bucket('kirbyjs.com')
 
-latestLastModifiedDate = my_bucket.Object('index.html').last_modified
+latest_last_modified_date = my_bucket.Object('index.html').last_modified
 
-print(latestLastModifiedDate)
+for obj in my_bucket.objects.all():
+    last_modified = obj.Object().last_modified
 
-for my_bucket_object in my_bucket.objects.all():
-    print(my_bucket_object)
+    if (last_modified < lastest_last_modified_date - datetime.timedelta(0, 30)):
+        print('object will be deleted:')
+        print(obj)
