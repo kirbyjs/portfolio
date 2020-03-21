@@ -10,6 +10,6 @@ latest_last_modified_date = my_bucket.Object('index.html').last_modified
 for obj in my_bucket.objects.all():
     last_modified = obj.Object().last_modified
 
-    if (last_modified < lastest_last_modified_date - datetime.timedelta(0, 30)):
+    if (last_modified < latest_last_modified_date - datetime.timedelta(0, 30)):
         print('object will be deleted:')
         print(obj)
