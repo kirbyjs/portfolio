@@ -1,11 +1,14 @@
 // Created by kirby15 on 2/1/18.
 
 const path = require('path');
+const { v4 } = require('uuid');
+const md5 = require('md5-file');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
 
+const publicAssetsDirectory = path.resolve(__dirname, '..', '..', 'assets', 'public');
 const isProduction = process.env.NODE_ENV === 'production';
 const scssCommonLoaders = [
     {
@@ -38,12 +41,14 @@ module.exports = {
         rules: [
             {
                 test: /\.(jpg|jp2|webp|pdf|png|svg)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[contenthash].[ext]'
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[contenthash].[ext]'
+                        }
                     }
-                }]
+                ]
             },
             {
                 test: /\.scss/,
@@ -59,20 +64,24 @@ module.exports = {
             additionalManifestEntries: [
                 {
                     url: '/index.html',
-                    revision: null
+                    revision: v4()
+                        .split('-')
+                        .join('')
                 },
                 {
                     url: '/manifest.json',
-                    revision: null
+                    revision: md5.sync(path.resolve(publicAssetsDirectory, 'manifest.json'))
                 },
                 {
                     url: '/favicon.ico',
-                    revision: null
+                    revision: md5.sync(path.resolve(publicAssetsDirectory, 'favicon.ico'))
                 }
             ]
         }),
-        new CopyPlugin([{
-            from: path.resolve(__dirname, '..', '..', 'assets', 'public')
-        }])
+        new CopyPlugin([
+            {
+                from: publicAssetsDirectory
+            }
+        ])
     ]
 };
