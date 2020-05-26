@@ -15,7 +15,7 @@
     "url": "https://github.com/kirbyjs/portfolio.git"
   },
   "dependencies": {
-    "lazysizes": "^5.2.0",
+    "lazysizes": "^5.2.1",
     "workbox-webpack-plugin": "^5.1.3"
   },
   "devDependencies": {
