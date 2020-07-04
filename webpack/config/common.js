@@ -3,11 +3,13 @@
 const path = require('path');
 const { v4 } = require('uuid');
 const md5 = require('md5-file');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
 
+const source = path.resolve(__dirname, '..', '..', 'src');
 const publicAssetsDirectory = path.resolve(__dirname, '..', '..', 'assets', 'public');
 const isProduction = process.env.NODE_ENV === 'production';
 const scssCommonLoaders = [
@@ -77,6 +79,20 @@ module.exports = {
                     revision: md5.sync(path.resolve(publicAssetsDirectory, 'favicon.ico'))
                 }
             ]
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['main'],
+            template: path.resolve(source, 'index.html')
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['fcc/index'],
+            filename: 'fcc/index.html',
+            template: path.resolve(source, 'fcc', 'index.html')
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['fcc/tribute/index'],
+            filename: 'fcc/tribute/index.html',
+            template: path.resolve(source, 'fcc', 'tribute', 'index.html')
         }),
         new CopyPlugin({
             patterns: [{

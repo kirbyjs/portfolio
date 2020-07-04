@@ -1,6 +1,5 @@
 // Created by kirby15 on 2/1/18.
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -16,6 +15,11 @@ module.exports = {
         },
         minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin()]
     },
+    entry: {
+        main: './src/index.js',
+        'fcc/index': './src/fcc/index.js',
+        'fcc/tribute/index': './src/fcc/tribute/index.js'
+    },
     output: {
         filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, '..', '..', 'assets', 'bundle'),
@@ -23,9 +27,6 @@ module.exports = {
     },
     plugins: [
         ...webpackConfig.plugins,
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '..', '..', 'src', 'index.html')
-        }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
         })

@@ -1,6 +1,5 @@
 // Created by kirby15 on 2/1/18.
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const webpackConfig = require('./common');
@@ -17,11 +16,17 @@ module.exports = {
         open: true,
         port: 9020
     },
+    entry: {
+        main: './src/index.js',
+        'fcc/index': './src/fcc/index.js',
+        'fcc/tribute/index': './src/fcc/tribute/index.js'
+    },
+    output: {
+        filename: '[name].js',
+        publicPath: '/'
+    },
     plugins: [
         ...webpackConfig.plugins,
-        new HtmlWebpackPlugin({
-            template: path.resolve(source, 'index.html')
-        }),
         new MiniCssExtractPlugin({
             filename: '[name].css'
         })
