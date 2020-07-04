@@ -78,10 +78,10 @@ module.exports = {
                 }
             ]
         }),
-        new CopyPlugin([
-            {
+        new CopyPlugin({
+            patterns: [{
                 from: publicAssetsDirectory
-            }
-        ])
+            }]
+        })
     ]
 };
