@@ -8,6 +8,10 @@ locals {
   min_ttl                 = 86400
 }
 
+data "aws_lambda_function" "cloudfront_default_directory_index" {
+  function_name = "CloudfrontDefaultDirectoryIndex"
+}
+
 resource "aws_cloudfront_origin_access_identity" "root_kirbyjs" {
   comment = "kirbyjs.com default oai"
 }
@@ -45,10 +49,15 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
         forward = "none"
       }
     }
+
+    lambda_function_association {
+      event_type = "origin-request"
+      lambda_arn = data.aws_lambda_function.cloudfront_default_directory_index.qualified_arn
+    }
   }
 
     ordered_cache_behavior {
-      path_pattern           = "/index.html"
+      path_pattern           = "index.html"
       allowed_methods        = local.default_allowed_methods
       compress               = true
       cached_methods         = local.default_cached_methods

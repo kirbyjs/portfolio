@@ -44,6 +44,8 @@ jobs:
         run: |
           aws s3 cp ./assets/bundle s3://kirbyjs.com/ --recursive --cache-control max-age=31536000
           aws s3 cp ./assets/bundle/index.html s3://kirbyjs.com/ --cache-control max-age=0
+          aws s3 cp ./assets/bundle/fcc/index.html s3://kirbyjs.com/fcc --cache-control max-age=0
+          aws s3 cp ./assets/bundle/fcc/tribute/index.html s3://kirbyjs.com/fcc/tribute --cache-control max-age=0
 
   cleanup:
     needs: build_and_deploy
