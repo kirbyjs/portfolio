@@ -57,7 +57,7 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
   }
 
     ordered_cache_behavior {
-      path_pattern           = "index.html"
+      path_pattern           = "/*.html"
       allowed_methods        = local.default_allowed_methods
       compress               = true
       cached_methods         = local.default_cached_methods
