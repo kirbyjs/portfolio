@@ -57,7 +57,7 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
   }
 
     ordered_cache_behavior {
-      path_pattern           = "/index.html"
+      path_pattern           = "/*.html"
       allowed_methods        = local.default_allowed_methods
       compress               = true
       cached_methods         = local.default_cached_methods
@@ -75,26 +75,6 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
         }
       }
     }
-
-  ordered_cache_behavior {
-    path_pattern           = "/fcc/*.html"
-    allowed_methods        = local.default_allowed_methods
-    compress               = true
-    cached_methods         = local.default_cached_methods
-    target_origin_id       = local.root_s3_origin_id
-    viewer_protocol_policy = "redirect-to-https"
-    default_ttl            = 0
-    max_ttl                = 0
-    min_ttl                = 0
-
-    forwarded_values {
-      query_string = false
-
-      cookies {
-        forward = "none"
-      }
-    }
-  }
 
   restrictions {
     geo_restriction {
