@@ -52,7 +52,7 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
 
     lambda_function_association {
       event_type = "origin-request"
-      lambda_arn = data.aws_lambda_function.cloudfront_default_directory_index.qualified_arn
+      lambda_arn = "${data.aws_lambda_function.cloudfront_default_directory_index.arn}:3"
     }
   }
 
