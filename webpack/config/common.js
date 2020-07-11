@@ -94,6 +94,11 @@ module.exports = {
             filename: 'fcc/tribute/index.html',
             template: path.resolve(source, 'fcc', 'tribute', 'index.html')
         }),
+        new HtmlWebpackPlugin({
+            chunks: ['fcc/survey-form/index'],
+            filename: 'fcc/survey-form/index.html',
+            template: path.resolve(source, 'fcc', 'survey-form', 'index.html')
+        }),
         new CopyPlugin({
             patterns: [{
                 from: publicAssetsDirectory
