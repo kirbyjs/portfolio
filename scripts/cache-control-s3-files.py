@@ -9,7 +9,12 @@ for obj in my_bucket.objects.all():
     Object = obj.Object()
 
     if (Object.key.endswith('index.html')):
-        Object.put(
+        Object.copy_from(
+            CopySource={
+                'Bucket': 'kirbyjs.com',
+                'Key': Object.key,
+            },
             ContentType='text/html',
-            CacheControl='no-store'
+            CacheControl='no-store',
+            MetadataDirective='REPLACE'
         )
