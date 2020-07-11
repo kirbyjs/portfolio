@@ -5,7 +5,7 @@ locals {
   default_cached_methods  = ["GET", "HEAD", "OPTIONS"]
   default_ttl             = 2592000
   max_ttl                 = 31536000
-  min_ttl                 = 86400
+  min_ttl                 = 0
 }
 
 data "aws_lambda_function" "cloudfront_default_directory_index" {
