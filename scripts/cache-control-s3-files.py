@@ -9,4 +9,7 @@ for obj in my_bucket.objects.all():
     Object = obj.Object()
 
     if (Object.key.endswith('index.html')):
-        Object.put(CacheControl='no-store')
+        Object.put(
+            ContentType='text/html',
+            CacheControl='no-store'
+        )
