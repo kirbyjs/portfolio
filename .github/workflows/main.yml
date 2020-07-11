@@ -46,7 +46,7 @@ jobs:
           aws s3 cp ./assets/bundle/index.html s3://kirbyjs.com/ --cache-control max-age=0
           aws s3 cp ./assets/bundle/fcc/index.html s3://kirbyjs.com/fcc/ --cache-control max-age=0
           aws s3 cp ./assets/bundle/fcc/tribute/index.html s3://kirbyjs.com/fcc/tribute/ --cache-control max-age=0
-          aws s3 cp ./assets/bundle/fcc/survey-form/index.html s3://kirbyjs.com/fcc/tribute/ --cache-control max-age=0
+          aws s3 cp ./assets/bundle/fcc/survey-form/index.html s3://kirbyjs.com/fcc/survey-form/ --cache-control max-age=0
 
   cleanup:
     needs: build_and_deploy
