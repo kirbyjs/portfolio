@@ -14,17 +14,17 @@
         <form id="survey-form" action="#">
             <div class="input-field">
                 <input placeholder="Yo, your name goes here" id="name" name="name" type="text" class="validate" required>
-                <label id="name-label" for="name">Name</label>
+                <label id="name-label" for="name" class="active">Name</label>
             </div>
             <div class="input-field">
                 <input placeholder="Enter your email" id="email" name="email" type="email" class="validate" required>
-                <label id="email-label" for="email">Email</label>
+                <label id="email-label" for="email" class="active">Email</label>
             </div>
             <div class="input-field">
                 <input placeholder="Age" id="number" name="age" type="number" min="10" max="120" class="validate" required>
-                <label id="number-label" for="number">Age</label>
+                <label id="number-label" for="number" class="active">Age</label>
             </div>
-            <div class="input-field">
+            <div class="dropdown-wrapper input-field">
                 <select id="dropdown" name="satisfaction">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="10">10</option>
