@@ -17,7 +17,10 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <header>
+    <nav id="navbar">
+        <span class="square"><a href="#projects">Projects</a></span>
+    </nav>
+    <header id="welcome-section">
         <picture>
             <source type="image/webp" srcset="<%=require('./kirby.webp').default%>">
             <img src="<%=require('./kirby.png').default%>" id="kirby-img" alt="Kirby Simmons as a boy in a superman costume."/>
@@ -25,50 +28,76 @@
         <h1>Kirby Simmons</h1>
         <h3>Software Engineer</h3>
         <a href="<%=require('./resume.pdf').default%>" id="resume">R&eacute;sum&eacute;</a>
+        <div class="social-media">
+            <a id="profile-link" href="https://github.com/kirbyjs" target="_blank" aria-label="Kirby's Github Account"><i class="fab fa-github-alt"></i></a>
+            <a href="https://linkedin.com/in/kirbyjs" target="_blank" aria-label="Kirby's LinkedIn Account"><i class="fab fa-linkedin"></i></a>
+        </div>
     </header>
-    <article>
-        <div class="content-wrapper">
-            <picture>
-                <source type="image/jp2" srcset="<%=require('./wm.jp2').default%>">
-                <source type="image/webp" srcset="<%=require('./wm.webp').default%>">
-                <img src="<%=require('./wm.jpg').default%>" class="project-img" alt="Work Manager Sample Image"/>
-            </picture>
-            <div class="project-details">
-                <h2>TekSystems - John Deere Contractor</h2>
-                <section>
-                    <p>Currently at John Deere, I help develop test driven planning software for farm managers in Germany
-                        with Agile. I also manage the deployment of applications that my team owns.</p>
-                    <h3>Technology</h3>
-                    <p>Work Manager was primarily the application that I worked on. For the front-end we used react/redux,
-                        and used babel/webpack to bundle our code. For the backend we used node.js with the hapi.js
-                        framework. All our code was test driven using mocha.</p>
-                    <p>There was also a couple java spring microservices that I worked on. This is where I got to learn a
-                        lot about cloud infrastructure by learning how to deploy the microservice to AWS ECS and AWS ELB. We
-                        used Terraform to manage the deployment of the infrastructure.</p>
-                </section>
+    <article id="projects">
+        <div class="project-tile">
+            <div class="content-wrapper">
+                <picture>
+                    <source type="image/jp2" srcset="<%=require('./wm.jp2').default%>">
+                    <source type="image/webp" srcset="<%=require('./wm.webp').default%>">
+                    <img src="<%=require('./wm.jpg').default%>" class="project-img" alt="Work Manager Sample Image"/>
+                </picture>
+                <div class="project-details">
+                    <h2>TekSystems - John Deere Contractor</h2>
+                    <section>
+                        <p>Currently at John Deere, I help develop test driven planning software for farm managers in Germany
+                            with Agile. I also manage the deployment of applications that my team owns.</p>
+                        <h3>Technology</h3>
+                        <p>Work Manager was primarily the application that I worked on. For the front-end we used react/redux,
+                            and used babel/webpack to bundle our code. For the backend we used node.js with the hapi.js
+                            framework. All our code was test driven using mocha.</p>
+                        <p>There was also a couple java spring microservices that I worked on. This is where I got to learn a
+                            lot about cloud infrastructure by learning how to deploy the microservice to AWS ECS and AWS ELB. We
+                            used Terraform to manage the deployment of the infrastructure.</p>
+                    </section>
+                </div>
+                <div class="tech-icons">
+                    <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/react.svg').default%>" alt="React.js Logo"/></a>
+                    <a href="https://redux.js.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/redux.svg').default%>" alt="Redux.js Logo"/></a>
+                    <a href="https://babeljs.io/" target="_blank" rel="noreferrer"><img class="img-horizontal lazyload" data-src="<%=require('./icons/babel.svg').default%>" alt="Babel Logo"/></a>
+                    <a href="https://webpack.js.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/webpack.svg').default%>" alt="Webpack Logo"/></a>
+                    <a href="https://sass-lang.com/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/sass.svg').default%>" alt="Sass Logo"/></a>
+                    <a href="https://nodejs.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/nodejs.svg').default%>" alt="Nodejs Logo"/></a>
+                    <a href="https://hapi.dev/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/hapijs.svg').default%>" alt="Hapijs Logo"/></a>
+                    <a href="https://mochajs.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/mocha.svg').default%>" alt="Mocha Logo"/></a>
+                    <a href="https://spring.io/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/spring.svg').default%>" alt="Spring Logo"/></a>
+                    <a href="https://aws.amazon.com/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/pb_aws.png').default%>" alt="AWS Logo"/></a>
+                    <a href="https://terraform.io/" target="_blank" rel="noreferrer"><img class="img-horizontal lazyload" data-src="<%=require('./icons/terraform.svg').default%>" alt="Terraform Logo"/></a>
+                </div>
             </div>
-            <div class="tech-icons">
-                <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/react.svg').default%>" alt="React.js Logo"/></a>
-                <a href="https://redux.js.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/redux.svg').default%>" alt="Redux.js Logo"/></a>
-                <a href="https://babeljs.io/" target="_blank" rel="noreferrer"><img class="img-horizontal lazyload" data-src="<%=require('./icons/babel.svg').default%>" alt="Babel Logo"/></a>
-                <a href="https://webpack.js.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/webpack.svg').default%>" alt="Webpack Logo"/></a>
-                <a href="https://sass-lang.com/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/sass.svg').default%>" alt="Sass Logo"/></a>
-                <a href="https://nodejs.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/nodejs.svg').default%>" alt="Nodejs Logo"/></a>
-                <a href="https://hapi.dev/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/hapijs.svg').default%>" alt="Hapijs Logo"/></a>
-                <a href="https://mochajs.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/mocha.svg').default%>" alt="Mocha Logo"/></a>
-                <a href="https://spring.io/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/spring.svg').default%>" alt="Spring Logo"/></a>
-                <a href="https://aws.amazon.com/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/pb_aws.png').default%>" alt="AWS Logo"/></a>
-                <a href="https://terraform.io/" target="_blank" rel="noreferrer"><img class="img-horizontal lazyload" data-src="<%=require('./icons/terraform.svg').default%>" alt="Terraform Logo"/></a>
+        </div>
+        <div class="project-tile">
+            <div class="content-wrapper">
+                <div class="project-details">
+                    <h2 class=""><a href="http://powellguitar.com/" target="_blank" rel="noreferrer">Powell Guitar</a></h2>
+                    <section>
+                        <p>Aaron Powell was one of my first clients as a freelancer while I was still in college.
+                           It taught me what it was like to work with a client. </p>
+                        <h3>Technology</h3>
+                        <p>PowellGuitar is a website that is made with WordPress so that Aaron can still manage the content on the site.
+                           I did not make the theme from scratch, but I did make HTML and CSS tweaks to it to meet Aaron's needs.</p>
+                    </section>
+                </div>
+                <picture>
+                    <source type="image/jp2" srcset="<%=require('./powell-guitar.jp2').default%>">
+                    <source type="image/webp" srcset="<%=require('./powell-guitar.webp').default%>">
+                    <img src="<%=require('./powell-guitar.jpg').default%>" class="project-img" alt="Powell Guitar Sample Image"/>
+                </picture>
+                <div class="tech-icons">
+                    <a href="https://wordpress.org/" target="_blank" rel="noreferrer"><img class="lazyload" data-src="<%=require('./icons/wordpress.svg').default%>" alt="WordPress Logo"/></a>
+                    <img class="lazyload" data-src="<%=require('./icons/html.svg').default%>" alt="HTML5 Logo"/>
+                    <img class="lazyload" data-src="<%=require('./icons/css.svg').default%>" alt="CSS3 Logo"/>
+                </div>
             </div>
         </div>
     </article>
     <footer>
         <div class="made-with-love">
             Made with <i class="fas fa-heart"></i> by Kirby
-        </div>
-        <div class="social-media">
-            <a href="https://github.com/kirbyjs" aria-label="Kirby's Github Account"><i class="fab fa-github-alt"></i></a>
-            <a href="https://linkedin.com/in/kirbyjs" aria-label="Kirby's LinkedIn Account"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
