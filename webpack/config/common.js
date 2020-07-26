@@ -39,6 +39,13 @@ const scssCommonLoaders = [
 ];
 
 module.exports = {
+    entry: {
+        main: './src/index.js',
+        'fcc/index': './src/fcc/index.js',
+        'fcc/tribute/index': './src/fcc/tribute/index.js',
+        'fcc/survey-form/index': './src/fcc/survey-form/index.js',
+        'fcc/product-landing/index': './src/fcc/product-landing/index.js'
+    },
     module: {
         rules: [
             {
@@ -98,6 +105,11 @@ module.exports = {
             chunks: ['fcc/survey-form/index'],
             filename: 'fcc/survey-form/index.html',
             template: path.resolve(source, 'fcc', 'survey-form', 'index.html')
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['fcc/product-landing/index'],
+            filename: 'fcc/product-landing/index.html',
+            template: path.resolve(source, 'fcc', 'product-landing', 'index.html')
         }),
         new CopyPlugin({
             patterns: [{

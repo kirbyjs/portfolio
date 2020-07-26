@@ -16,12 +16,6 @@ module.exports = {
         open: true,
         port: 9020
     },
-    entry: {
-        main: './src/index.js',
-        'fcc/index': './src/fcc/index.js',
-        'fcc/tribute/index': './src/fcc/tribute/index.js',
-        'fcc/survey-form/index': './src/fcc/survey-form/index.js'
-    },
     output: {
         filename: '[name].js',
         publicPath: '/'
