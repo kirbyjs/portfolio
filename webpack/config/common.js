@@ -44,7 +44,8 @@ module.exports = {
         'fcc/index': './src/fcc/index.js',
         'fcc/tribute/index': './src/fcc/tribute/index.js',
         'fcc/survey-form/index': './src/fcc/survey-form/index.js',
-        'fcc/product-landing/index': './src/fcc/product-landing/index.js'
+        'fcc/product-landing/index': './src/fcc/product-landing/index.js',
+        'fcc/tech-docs/index': './src/fcc/tech-docs/index.js'
     },
     module: {
         rules: [
@@ -110,6 +111,11 @@ module.exports = {
             chunks: ['fcc/product-landing/index'],
             filename: 'fcc/product-landing/index.html',
             template: path.resolve(source, 'fcc', 'product-landing', 'index.html')
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['fcc/tech-docs/index'],
+            filename: 'fcc/tech-docs/index.html',
+            template: path.resolve(source, 'fcc', 'tech-docs', 'index.html')
         }),
         new CopyPlugin({
             patterns: [{
