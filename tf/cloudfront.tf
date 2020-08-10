@@ -8,10 +8,6 @@ locals {
   min_ttl                 = 0
 }
 
-data "aws_lambda_function" "cloudfront_default_directory_index" {
-  function_name = "CloudfrontDefaultDirectoryIndex"
-}
-
 resource "aws_cloudfront_origin_access_identity" "root_kirbyjs" {
   comment = "kirbyjs.com default oai"
 }
@@ -48,11 +44,6 @@ resource "aws_cloudfront_distribution" "root_kirbyjs" {
       cookies {
         forward = "none"
       }
-    }
-
-    lambda_function_association {
-      event_type = "origin-request"
-      lambda_arn = "${data.aws_lambda_function.cloudfront_default_directory_index.arn}:3"
     }
   }
 

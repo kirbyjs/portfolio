@@ -7,8 +7,8 @@
   "scripts": {
     "build": "rm -rf ./assets/bundle && cross-env NODE_ENV=production npm run webpack:prod",
     "start": "npm run webpack:dev",
-    "webpack:dev": "webpack-dev-server --config ./webpack/config/dev-server.js --hot",
-    "webpack:prod": "webpack --config ./webpack/config/app.js"
+    "webpack:dev": "webpack-dev-server --config webpack/dev-server.js --hot",
+    "webpack:prod": "webpack --config webpack/app.js"
   },
   "repository": {
     "type": "git",
