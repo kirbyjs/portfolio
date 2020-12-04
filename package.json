@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "lazysizes": "^5.2.2",
-    "workbox-webpack-plugin": "^5.1.4"
+    "workbox-webpack-plugin": "^6.0.2"
   },
   "devDependencies": {
     "autoprefixer": "~9.8.6",
