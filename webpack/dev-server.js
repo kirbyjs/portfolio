@@ -1,18 +1,15 @@
 // Created by kirby15 on 2/1/18.
 
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
 const webpackConfig = require('./common');
-
-const source = path.resolve(__dirname, '..', '..', 'src');
 
 module.exports = {
     ...webpackConfig,
     mode: 'development',
     devtool: 'source-map',
     devServer: {
-        contentBase: [source],
-        watchContentBase: true,
+        host: 'localhost',
         open: true,
         port: 9020
     },
@@ -22,6 +19,7 @@ module.exports = {
     },
     plugins: [
         ...webpackConfig.plugins,
+        new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].css'
         })

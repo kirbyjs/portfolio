@@ -1,24 +1,16 @@
 // Created by kirby15 on 2/1/18.
 
 const path = require('path');
-const { v4 } = require('uuid');
-const md5 = require('md5-file');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const { GenerateSW } = require('workbox-webpack-plugin');
 
 const source = path.resolve(__dirname, '..', 'src');
 const publicAssetsDirectory = path.resolve(__dirname, '..', 'assets', 'public');
 const isProduction = process.env.NODE_ENV === 'production';
 const scssCommonLoaders = [
     {
-        loader: MiniCssExtractPlugin.loader,
-        options: {
-            hmr: !isProduction,
-            reloadAll: !isProduction
-        }
+        loader: MiniCssExtractPlugin.loader
     },
     {
         loader: 'css-loader',
@@ -34,7 +26,7 @@ const scssCommonLoaders = [
         loader: 'postcss-loader',
         options: {
             postcssOptions: {
-                plugins: [autoprefixer()]
+                plugins: ['autoprefixer']
             }
         }
     }
@@ -64,27 +56,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new GenerateSW({
-            swDest: 'sw.js',
-            clientsClaim: true,
-            skipWaiting: true,
-            additionalManifestEntries: [
-                {
-                    url: '/index.html',
-                    revision: v4()
-                        .split('-')
-                        .join('')
-                },
-                {
-                    url: '/manifest.json',
-                    revision: md5.sync(path.resolve(publicAssetsDirectory, 'manifest.json'))
-                },
-                {
-                    url: '/favicon.ico',
-                    revision: md5.sync(path.resolve(publicAssetsDirectory, 'favicon.ico'))
-                }
-            ]
-        }),
         new HtmlWebpackPlugin({
             chunks: ['main'],
             template: path.resolve(source, 'index.html')
