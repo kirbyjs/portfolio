@@ -25,12 +25,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: setup_python
-        uses: actions/setup-python@v1
-        with:
-          python-version: "3.x"
-      - name: install_dependencies
-        run: pip install boto3
       - name: get_node_js
         uses: actions/setup-node@v1
         with:
@@ -48,6 +42,5 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws s3 cp ./assets/bundle s3://kirbyjs.com/ --recursive --cache-control max-age=31536000
+          aws s3 sync ./assets/bundle s3://kirbyjs.com/ --recursive --cache-control max-age=31536000
           aws s3 cp ./assets/bundle/index.html s3://kirbyjs.com/ --cache-control no-store
-          python ./scripts/cleanup_s3_bucket.py
