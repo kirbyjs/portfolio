@@ -1,13 +1,9 @@
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 550px) {
-  .project-tile .content-wrapper {
-    padding: 30px 20px 0 20px;
-    width: 100%;
-  }
-}
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 550px) {
+  body {
+    font-size: 1.4rem;
+  }
+
   .project-tile .content-wrapper {
     padding: 30px 20px 0 20px;
     width: 75%;
@@ -16,6 +12,10 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 1200px) {
+  body {
+    font-size: 1.5rem;
+  }
+
   .project-tile {
     .content-wrapper {
       padding: 30px 20px 0 20px;
