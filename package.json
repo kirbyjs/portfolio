@@ -15,7 +15,7 @@
     "url": "https://github.com/kirbyjs/portfolio.git"
   },
   "dependencies": {
-    "lazysizes": "^5.3.1"
+    "lazysizes": "^5.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
