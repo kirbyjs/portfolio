@@ -3,7 +3,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const path = require('path');
 const { GenerateSW } = require('workbox-webpack-plugin');
 const webpackConfig = require('./common');
 
@@ -18,7 +17,6 @@ module.exports = {
     },
     output: {
         filename: '[name].[chunkhash].js',
-        path: path.resolve(__dirname, '..', 'assets', 'bundle'),
         publicPath: '/'
     },
     plugins: [

@@ -43,7 +43,7 @@ jobs:
           aws-region: us-east-1
       - name: deploy
         run: |
-          aws s3 sync ./assets/bundle s3://kirbyjs.com/ --cache-control max-age=31536000
-          aws s3 cp ./assets/bundle/index.html s3://kirbyjs.com/ --cache-control no-store
-          aws s3 cp ./assets/bundle/sw.js s3://kirbyjs.com/ --cache-control no-store
-          aws s3 cp ./assets/bundle/manifest.json s3://kirbyjs.com/ --cache-control no-store
+          aws s3 sync ./dist s3://kirbyjs.com/ --cache-control max-age=31536000
+          aws s3 cp ./dist/index.html s3://kirbyjs.com/ --cache-control no-store
+          aws s3 cp ./dist/sw.js s3://kirbyjs.com/ --cache-control no-store
+          aws s3 cp ./dist/manifest.json s3://kirbyjs.com/ --cache-control no-store

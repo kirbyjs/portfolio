@@ -5,10 +5,8 @@
   "author": "Kirby",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf ./assets/bundle && cross-env NODE_ENV=production npm run webpack:prod",
-    "start": "npm run webpack:dev",
-    "webpack:dev": "webpack serve --config webpack/dev-server.js --hot",
-    "webpack:prod": "webpack --config webpack/app.js"
+    "build": "rm -rf ./dist && cross-env NODE_ENV=production webpack --config webpack/app.js",
+    "start": "webpack serve --config webpack/dev-server.js --hot"
   },
   "repository": {
     "type": "git",
@@ -23,16 +21,13 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
     "css-minimizer-webpack-plugin": "^2.0.0",
-    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
-    "md5-file": "^5.0.0",
     "mini-css-extract-plugin": "^1.5.0",
     "postcss": "^8.2.13",
     "postcss-loader": "^5.2.0",
     "sass": "^1.32.11",
     "sass-loader": "^11.0.1",
     "terser-webpack-plugin": "^5.1.1",
-    "uuid": "^8.3.2",
     "webpack": "^5.35.1",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^4.0.0-beta.2",

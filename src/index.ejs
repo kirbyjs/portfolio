@@ -20,12 +20,12 @@
 <body>
     <header id="welcome-section">
         <picture>
-            <source type="image/webp" srcset="<%=require('./kirby.webp').default%>">
-            <img src="<%=require('./kirby.png').default%>" id="kirby-img" alt="Kirby Simmons as a boy in a superman costume." width="100px" height="225px"/>
+            <source type="image/webp" srcset="<%=require('./kirby.webp')%>">
+            <img src="<%=require('./kirby.png')%>" id="kirby-img" alt="Kirby Simmons as a boy in a superman costume." width="100px" height="225px"/>
         </picture>
         <h1>Kirby Simmons</h1>
         <h2>Software Engineer</h2>
-        <a href="<%=require('./resume.pdf').default%>" id="resume">R&eacute;sum&eacute;</a>
+        <a href="<%=require('./resume.pdf')%>" id="resume">R&eacute;sum&eacute;</a>
         <div class="social-media">
             <a id="profile-link" href="https://github.com/kirbyjs" rel="noopener" target="_blank" aria-label="Kirby's Github Account">
                 <svg width="40px" height="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
@@ -39,9 +39,9 @@
         <div class="project-tile">
             <div class="content-wrapper">
                 <picture>
-                    <source type="image/jp2" srcset="<%=require('./wm.jp2').default%>">
-                    <source type="image/webp" srcset="<%=require('./wm.webp').default%>">
-                    <img src="<%=require('./wm.jpg').default%>" class="project-img" alt="Work Manager Sample Image"/>
+                    <source type="image/jp2" srcset="<%=require('./wm.jp2')%>">
+                    <source type="image/webp" srcset="<%=require('./wm.webp')%>">
+                    <img src="<%=require('./wm.jpg')%>" class="project-img" alt="Work Manager Sample Image"/>
                 </picture>
                 <div class="project-details">
                     <h2>TekSystems - John Deere Contractor</h2>
@@ -58,17 +58,17 @@
                     </section>
                 </div>
                 <div class="tech-icons">
-                    <a href="https://reactjs.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/react.svg').default%>" alt="React.js Logo" height="75px" width="75px"/></a>
-                    <a href="https://redux.js.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/redux.svg').default%>" alt="Redux.js Logo" height="75px" width="75px"/></a>
-                    <a href="https://babeljs.io/" target="_blank" rel="noopener"><img class="img-horizontal lazyload" data-src="<%=require('./icons/babel.svg').default%>" alt="Babel Logo" height="48px" width="125px"/></a>
-                    <a href="https://webpack.js.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/webpack.svg').default%>" alt="Webpack Logo" height="75px" width="75px"/></a>
-                    <a href="https://sass-lang.com/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/sass.svg').default%>" alt="Sass Logo" height="75px" width="75px"/></a>
-                    <a href="https://nodejs.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/nodejs.svg').default%>" alt="Nodejs Logo" height="75px" width="75px"/></a>
-                    <a href="https://hapi.dev/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/hapijs.svg').default%>" alt="Hapijs Logo" height="75px" width="75px"/></a>
-                    <a href="https://mochajs.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/mocha.svg').default%>" alt="Mocha Logo" height="75px" width="75px"/></a>
-                    <a href="https://spring.io/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/spring.svg').default%>" alt="Spring Logo" height="75px" width="75px"/></a>
-                    <a href="https://aws.amazon.com/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/pb_aws.png').default%>" alt="AWS Logo" height="53px" width="75px"/></a>
-                    <a href="https://terraform.io/" target="_blank" rel="noopener"><img class="img-horizontal lazyload" data-src="<%=require('./icons/terraform.svg').default%>" alt="Terraform Logo" height="30px" width="125px"/></a>
+                    <a href="https://reactjs.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/react.svg')%>" alt="React.js Logo" height="75px" width="75px"/></a>
+                    <a href="https://redux.js.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/redux.svg')%>" alt="Redux.js Logo" height="75px" width="75px"/></a>
+                    <a href="https://babeljs.io/" target="_blank" rel="noopener"><img class="img-horizontal lazyload" data-src="<%=require('./icons/babel.svg')%>" alt="Babel Logo" height="48px" width="125px"/></a>
+                    <a href="https://webpack.js.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/webpack.svg')%>" alt="Webpack Logo" height="75px" width="75px"/></a>
+                    <a href="https://sass-lang.com/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/sass.svg')%>" alt="Sass Logo" height="75px" width="75px"/></a>
+                    <a href="https://nodejs.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/nodejs.svg')%>" alt="Nodejs Logo" height="75px" width="75px"/></a>
+                    <a href="https://hapi.dev/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/hapijs.svg')%>" alt="Hapijs Logo" height="75px" width="75px"/></a>
+                    <a href="https://mochajs.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/mocha.svg')%>" alt="Mocha Logo" height="75px" width="75px"/></a>
+                    <a href="https://spring.io/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/spring.svg')%>" alt="Spring Logo" height="75px" width="75px"/></a>
+                    <a href="https://aws.amazon.com/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/pb_aws.png')%>" alt="AWS Logo" height="53px" width="75px"/></a>
+                    <a href="https://terraform.io/" target="_blank" rel="noopener"><img class="img-horizontal lazyload" data-src="<%=require('./icons/terraform.svg')%>" alt="Terraform Logo" height="30px" width="125px"/></a>
                 </div>
             </div>
         </div>
@@ -85,14 +85,14 @@
                     </section>
                 </div>
                 <picture>
-                    <source type="image/jp2" srcset="<%=require('./powell-guitar.jp2').default%>">
-                    <source type="image/webp" srcset="<%=require('./powell-guitar.webp').default%>">
-                    <img src="<%=require('./powell-guitar.jpg').default%>" class="project-img" alt="Powell Guitar Sample Image"/>
+                    <source type="image/jp2" srcset="<%=require('./powell-guitar.jp2')%>">
+                    <source type="image/webp" srcset="<%=require('./powell-guitar.webp')%>">
+                    <img src="<%=require('./powell-guitar.jpg')%>" class="project-img" alt="Powell Guitar Sample Image"/>
                 </picture>
                 <div class="tech-icons">
-                    <a href="https://wordpress.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/wordpress.svg').default%>" alt="WordPress Logo" height="75px" width="75px"/></a>
-                    <img class="lazyload" data-src="<%=require('./icons/html.svg').default%>" alt="HTML5 Logo" height="75px" width="75px"/>
-                    <img class="lazyload" data-src="<%=require('./icons/css.svg').default%>" alt="CSS3 Logo" height="75px" width="75px"/>
+                    <a href="https://wordpress.org/" target="_blank" rel="noopener"><img class="lazyload" data-src="<%=require('./icons/wordpress.svg')%>" alt="WordPress Logo" height="75px" width="75px"/></a>
+                    <img class="lazyload" data-src="<%=require('./icons/html.svg')%>" alt="HTML5 Logo" height="75px" width="75px"/>
+                    <img class="lazyload" data-src="<%=require('./icons/css.svg')%>" alt="CSS3 Logo" height="75px" width="75px"/>
                 </div>
             </div>
         </div>

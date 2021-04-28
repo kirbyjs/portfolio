@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const source = path.resolve(__dirname, '..', 'src');
-const publicAssetsDirectory = path.resolve(__dirname, '..', 'assets', 'public');
+const assetsDirectory = path.resolve(__dirname, '..', 'assets');
 const isProduction = process.env.NODE_ENV === 'production';
 const scssCommonLoaders = [
     {
@@ -40,14 +40,10 @@ module.exports = {
         rules: [
             {
                 test: /\.(jpg|jp2|webp|pdf|png|svg|ttf|woff.*)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[contenthash].[ext]'
-                        }
-                    }
-                ]
+                type: 'asset/resource',
+                generator: {
+                    filename: '[name].[contenthash][ext]'
+                }
             },
             {
                 test: /\.scss/,
@@ -57,12 +53,13 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            favicon: './src/favicon.ico',
             chunks: ['main'],
-            template: path.resolve(source, 'index.html')
+            template: path.resolve(source, 'index.ejs')
         }),
         new CopyPlugin({
             patterns: [{
-                from: publicAssetsDirectory
+                from: assetsDirectory
             }]
         })
     ]
