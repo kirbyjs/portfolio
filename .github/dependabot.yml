@@ -1,0 +1,20 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "11:00"
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: webpack
+    versions:
+    - 5.34.0
+    - 5.36.0
+  - dependency-name: postcss-loader
+    versions:
+    - 5.0.0
+    - 5.1.0
+  - dependency-name: sass-loader
+    versions:
+    - 11.0.0
