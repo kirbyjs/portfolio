@@ -10,7 +10,16 @@
       ]
     },
     {
-      "source": "/(.*)",
+      "source": "/manifest.json",
+      "headers" : [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, no-store"
+        }
+      ]
+    },
+    {
+      "source": "/((?!.*\\.html|.*manifest\\.json).*)",
       "headers" : [
         {
           "key" : "Cache-Control",
